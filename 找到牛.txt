@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        char[]ch=sc.next().toCharArray();//输入字符串转成 char类型数组
+        int count=0;
+        int l=0;
+           //一层循环一直往后面进行枚举，所以只需要枚举出前面有多少个 ((
+        //然后枚举到当前是 )) ，那么加上前面的 (( 的个数
+        //只要发现一个就加上前面所有的 (
+        for(int i=0;i<ch.length-1;i++){
+            if(ch[i]=='('&&ch[i+1]=='('){
+                l++;//答案
+            }
+            if(ch[i]==')'&&ch[i+1]==')'){
+                count+=l;
+                
+            }
+        }
+        System.out.println(count);//输出答案
+    }
+    
+}
