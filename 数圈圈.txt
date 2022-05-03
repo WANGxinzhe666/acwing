@@ -1,0 +1,22 @@
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int count=0;//记录要计算的数字
+        int n=sc.nextInt();
+        String num=Integer.toHexString(n).toUpperCase();//将数字传化成16进制的大写字母
+        for(int i=0;i<num.length();i++){
+            char ch=num.charAt(i);
+            if(ch=='0'||ch=='4'||ch=='6'||ch=='9'||ch=='A'||ch=='D'){
+                count+=1;
+            }
+            if(ch=='8'||ch=='B'){
+                count+=2;
+            }
+        }
+        System.out.println(count);
+        
+        
+    }
+    
+}
