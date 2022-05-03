@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args){
+        Scanner sc=new  Scanner(System.in);
+        int D=sc.nextInt();//天数
+        int H=sc.nextInt();//小时
+        int M=sc.nextInt();//分钟
+        //判断结束时间是否小于开始时间 如果小于则输出-1
+        if(D==11&&(H<11||H==11&&M<11)){
+            System.out.println("-1");
+        }else{
+            System.out.println(((D-11)*60*24)+((H-11)*60)+(M-11));
+        }
+
+
+    }
+}
+
+作者：StackOverflow
