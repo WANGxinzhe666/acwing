@@ -1,0 +1,45 @@
+package Acwing;
+
+import java.util.Scanner;
+
+public class 信息中继续 {
+    static int N=1010;
+    static  int p[]=new int[N];
+    static  int n;
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        n=sc.nextInt();
+        for(int i=0;i<=n;i++){
+            p[i]=i;
+        }
+        for(int i=1;i<=n;i++){
+
+            int x=sc.nextInt();
+            if(find(x)!=find(i)){ //如果不是同一个集合
+                p[find(i)]=find(x);//那么将i号牛跟它所传讯的牛合并成一个集合
+
+            }
+
+
+        }
+        int count=0;
+        for(int i=1;i<=n;i++){
+            if(find(i)==0){
+                count++;
+            }
+        }
+        System.out.println(count);
+
+
+
+    }
+    static int find(int a){ //判断是否关联
+        if(p[a]==a){
+            return a;
+        }
+        p[a]=find(p[a]);
+        return p[a];
+
+    }
+}
